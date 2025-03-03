@@ -2,6 +2,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const auth_controller_1 = require("../controllers/auth.controller");
+const validation_1 = require("../middlewares/validation");
 const authRouter = (0, express_1.Router)();
-authRouter.post("/sign-up", auth_controller_1.signUp);
+authRouter.post("/sign-up", validation_1.validateSignUpUser, auth_controller_1.signUp);
+authRouter.post("/sign-in", validation_1.validateSignInUser, auth_controller_1.signIn);
+authRouter.post("/logout", auth_controller_1.signOut);
+authRouter.get("/google", auth_controller_1.googleAuth);
+authRouter.get("/google/callback", auth_controller_1.googleAuthCallback);
+authRouter.post("/reset-password", validation_1.validateResetPassword, auth_controller_1.resetPassword);
+authRouter.post("/change-password", validation_1.validateChangePassword, auth_controller_1.changePassword);
 exports.default = authRouter;
