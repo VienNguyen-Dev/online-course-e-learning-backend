@@ -18,7 +18,7 @@ const app = express();
 app.use(
   // cors()
   cors({
-    origin: "https://online-course-e-learning-frontend.vercel.app/",
+    origin: "https://online-course-e-learning-frontend.vercel.app",
     credentials: true,
   })
 );
@@ -28,9 +28,9 @@ app.use(cookieParser());
 
 app.use(
   session({
-    secret: "your_secret_key", // Thay thế bằng khóa bí mật của bạn
-    resave: false, // Không lưu lại session nếu không thay đổi
-    saveUninitialized: false, // Không lưu session mới mà không có dữ liệu
+    secret: "your_secret_key",
+    resave: false,
+    saveUninitialized: false,
   })
 );
 app.use(passport.initialize());
