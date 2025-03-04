@@ -1,11 +1,12 @@
 {
-  "name": "Online Course E Learning Backend",
+  "name": "online_course_e_learning_backend",
   "version": "1.0.0",
   "description": "",
   "main": "app.ts",
   "scripts": {
     "prepare": "npm run build",
     "build": "tsc",
+    "postinstall": "chmod -R 755 ./node_modules",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ts-node app.ts",
     "dev": "nodemon app.ts"
