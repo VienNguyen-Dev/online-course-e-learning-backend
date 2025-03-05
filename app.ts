@@ -16,11 +16,11 @@ import homeRouter from "./routes/home.route";
 const app = express();
 
 app.use(
-  cors()
-  // cors({
-  //   origin: "https://online-course-e-learning-frontend.vercel.app",
-  //   credentials: true,
-  // })
+  // cors()
+  cors({
+    origin: "https://online-course-e-learning-frontend.vercel.app",
+    credentials: true,
+  })
 );
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
