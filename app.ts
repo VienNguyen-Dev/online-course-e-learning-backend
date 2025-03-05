@@ -18,7 +18,7 @@ const app = express();
 app.use(
   // cors()
   cors({
-    origin: "https://online-course-e-learning-frontend.vercel.app",
+    origin: "http://localhost:3000",
     credentials: true,
   })
 );
