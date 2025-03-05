@@ -10,7 +10,6 @@ import courseRouter from "./routes/course.routes";
 import session from "express-session";
 import passport from "passport";
 import "./config/passport";
-import { getHomePage } from "./controllers/home.controller";
 import homeRouter from "./routes/home.route";
 
 const app = express();
@@ -18,7 +17,7 @@ const app = express();
 app.use(
   // cors()
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://online-course-e-learning-frontend.vercel.app",
     credentials: true,
   })
 );
